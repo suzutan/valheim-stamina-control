@@ -3,19 +3,27 @@
     <TargetFramework>net472</TargetFramework>
     <LangVersion>latest</LangVersion>
     <AssemblyName>StaminaControl</AssemblyName>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1591</NoWarn>
     <GamePath Condition="'$(GamePath)' == ''">E:\SteamLibrary\steamapps\common\Valheim</GamePath>
+    <GameManagedPath Condition="'$(GameManagedPath)' == ''">$(GamePath)\valheim_Data\Managed</GameManagedPath>
+    <BepInExPath Condition="'$(BepInExPath)' == ''">$(GamePath)\BepInEx\core</BepInExPath>
     <SyncPath Condition="'$(SyncPath)' == ''">$(GamePath)\BepInEx\plugins\ConditionalConfigSync.Plugin</SyncPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
-    <Reference Include="BepInEx"><HintPath>$(GamePath)\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="0Harmony"><HintPath>$(GamePath)\BepInEx\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="assembly_valheim"><HintPath>$(GamePath)\valheim_Data\Managed\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine"><HintPath>$(GamePath)\valheim_Data\Managed\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(BepInExPath)\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExPath)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_valheim"><HintPath>$(GameManagedPath)\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameManagedPath)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameManagedPath)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="ConditionalConfigSync"><HintPath>$(SyncPath)\ConditionalConfigSync.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
+  <Target Name="GeneratePluginVersion" BeforeTargets="CoreCompile">
+    <WriteLinesToFile File="$(IntermediateOutputPath)BuildInfo.g.cs"
+      Lines="namespace StaminaControl { internal static class BuildInfo { internal const string Version = &quot;$(Version)&quot;%3B } }"
+      Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <ItemGroup><Compile Include="$(IntermediateOutputPath)BuildInfo.g.cs" /></ItemGroup>
+  </Target>
 </Project>

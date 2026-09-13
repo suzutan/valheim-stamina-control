@@ -12,7 +12,8 @@ Valheimのスタミナ消費量と自然回復速度を変更するModです。
 - [BepInExPack Valheim](https://thunderstore.io/c/valheim/p/denikson/BepInExPack_Valheim/)
 - [Conditional Config Sync](https://thunderstore.io/c/valheim/p/shudnal/ConditionalConfigSync/) 1.0.5以上
 
-`StaminaControl.dll` を `BepInEx/plugins/StaminaControl/` に配置してください。
+[最新版のZIP](https://github.com/suzutan/valheim-stamina-control/releases/latest) をダウンロードし、ゲームのインストール先に展開してください。
+`BepInEx/plugins/StaminaControl/StaminaControl.dll` が配置されれば完了です。
 ソースからビルドする場合は [ビルド手順](docs/building.md) を参照してください。
 
 ## 設定

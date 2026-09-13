@@ -1,3 +1,11 @@
+# 1.0.1
+
+- Mod識別子を `jp.suzutan.valheim.staminacontrol` に変更。
+- GitHub ActionsによるビルドとRelease ZIPの配布に対応。
+
+旧 `jp.custom.valheim.staminacontrol.cfg` を使用していた場合は、ゲーム終了中に
+`jp.suzutan.valheim.staminacontrol.cfg` へ設定を移してください。マルチでは全員を更新してください。
+
 # 1.0.0
 
 - ConfigurationManagerで消費・自然回復倍率を0～20倍に設定。

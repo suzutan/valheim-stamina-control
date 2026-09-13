@@ -12,7 +12,7 @@ namespace StaminaControl
     {
         public const string Guid = "jp.suzutan.valheim.staminacontrol";
         public const string Name = "Stamina Control";
-        public const string Version = "1.0.0";
+        public const string Version = BuildInfo.Version;
 
         internal static ConfigEntry<bool> Enabled;
         internal static ConfigEntry<float> Consumption;

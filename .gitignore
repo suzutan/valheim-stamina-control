@@ -9,3 +9,5 @@
 *.zip
 *.log
 Environment.props
+artifacts/
+.deps/
