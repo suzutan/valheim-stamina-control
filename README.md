@@ -12,6 +12,8 @@ Valheimのスタミナ消費量と自然回復速度を変更するModです。
 - [BepInExPack Valheim](https://thunderstore.io/c/valheim/p/denikson/BepInExPack_Valheim/)
 - [Conditional Config Sync](https://www.nexusmods.com/valheim/mods/3451) 1.0.4以上
 
+依存ModはZIPに含まれていません。ホストと参加者それぞれに導入してください。
+
 [最新版のZIP](https://github.com/suzutan/valheim-stamina-control/releases/latest) をダウンロードし、ゲームのインストール先に展開してください。
 `BepInEx/plugins/StaminaControl/StaminaControl.dll` が配置されれば完了です。
 ソースからビルドする場合は [ビルド手順](docs/building.md) を参照してください。
@@ -42,11 +44,27 @@ Modが未導入、またはバージョンが非互換の場合は接続でき�
 設定を変更できるのはホストとサーバー管理者です。管理者は `adminlist.txt` で指定してください。
 専用サーバーにConfigurationManagerを入れる必要はありません。
 
-マルチプレイでの実機確認はまだ行っていません。
+フレンドを招待するホスト形式で、接続と倍率設定の同期を確認済みです。専用サーバーは未確認です。
 
 ## 互換性・不具合報告
 
-Valheim 1.0.12 / BepInExPack 5.4.2350 / ConfigurationManager 1.1.18で起動確認済みです。
+接続・設定同期を確認した構成：
+
+| ゲーム／Mod | バージョン |
+| --- | --- |
+| Valheim | 1.0.12 |
+| BepInExPack Valheim | 5.4.2350 |
+| Stamina Control | 1.0.2 |
+| Conditional Config Sync | 1.0.4 |
+| ConfigurationManager | 1.1.16 |
+
+Vortexで管理する場合は、依存ModもVortexから導入・有効化し、Deployしてください。
+DLLだけを手動で差し替えると、Vortexの表示と実際に読み込まれるバージョンが食い違う場合があります。
+実際の読み込みバージョンは `BepInEx/LogOutput.log` の `Loading [...]` で確認できます。
+
+ConfigurationManagerのバージョン差でも接続が拒否される場合があります。上記構成を使う場合は、ホストと参加者で1.1.16に揃えてください。
+1.1.18はCCS 1.0.5以上を要求するため、CCS 1.0.4との組み合わせでは読み込まれません。
+
 スタミナを変更する他のModと併用すると、効果が重なる場合があります。
 
 不具合は [Issues](https://github.com/suzutan/valheim-stamina-control/issues) へ。
