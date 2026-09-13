@@ -10,7 +10,7 @@ namespace StaminaControl
     [BepInDependency("_shudnal.ConditionalConfigSync", "1.0.5")]
     public sealed class Plugin : BaseUnityPlugin
     {
-        public const string Guid = "jp.custom.valheim.staminacontrol";
+        public const string Guid = "jp.suzutan.valheim.staminacontrol";
         public const string Name = "Stamina Control";
         public const string Version = "1.0.0";
 
