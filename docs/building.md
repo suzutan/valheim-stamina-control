@@ -22,10 +22,10 @@ CCSのDLLが `BepInEx/plugins/ConditionalConfigSync.Plugin/` 以外にある場�
 ## ZIPの作成
 
 ```powershell
-./scripts/package.ps1 -Version 1.0.1
+./scripts/package.ps1 -Version 1.0.2
 ```
 
-`artifacts/StaminaControl-1.0.1.zip` とSHA-256ファイルが生成されます。
+`artifacts/StaminaControl-1.0.2.zip` とSHA-256ファイルが生成されます。
 DLLのバージョンと指定値が違う場合はエラーになります。
 
 ## GitHub Release
@@ -38,7 +38,7 @@ GitHubの **Actions → Release → Run workflow** で、`version` に `1.0.2` �
 通常のローカルビルドはcsprojのVersionを使います。別の番号でビルドする場合は `-p:Version=1.0.2` を指定してください。
 
 CIはSteamCMDの匿名ログインでValheim Dedicated Serverを取得し、ゲームDLLをコンパイル参照として使います。
-BepInExPack 5.4.2350とCCS 1.0.5は配布元から取得してSHA-256を照合します。
+BepInExPack 5.4.2350とCCS 1.0.4は配布元から取得してSHA-256を照合します。
 ゲームDLLや依存ModのDLLはRelease Assetには含まれません。Steamの認証情報や追加のGitHubシークレットは不要です。
 
 公開済みReleaseは上書きしません。アップロード途中で失敗してDraftが残った場合は、DraftとAssetを確認してから復旧してください。

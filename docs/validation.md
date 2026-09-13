@@ -1,4 +1,16 @@
-# Validation — Stamina Control 1.0.0
+# Validation
+
+## Stamina Control 1.0.2 / CCS 1.0.4
+
+Built against the actual CCS 1.0.4 assembly and loaded with CCS 1.0.4 on Valheim 1.0.12.
+27 non-UI runtime assertions passed: dependency loading, config registration, consumption,
+regeneration, bounds and Harmony patch registration. ConfigurationManager was omitted from
+this isolated run because the previously tested 1.1.18 version itself requires CCS 1.0.5.
+The CCS 1.0.4 console-command registration emitted a warning (`Sequence contains no matching element`);
+Stamina Control initialized and all tested gameplay methods passed. Multiplayer transport and
+ConfigurationManager on CCS 1.0.4 have not been playtested.
+
+## Stamina Control 1.0.0
 
 2026-09-13 / Windows / Valheim 1.0.12 / Unity 6000.0.75.
 BepInExPack 5.4.2350, Conditional Config Sync 1.0.5, shudnal ConfigurationManager 1.1.18.

@@ -13,7 +13,7 @@ function Get-CheckedPackage([string]$Url, [string]$Name, [string]$Sha256) {
 }
 
 $bep = Get-CheckedPackage 'https://thunderstore.io/package/download/denikson/BepInExPack_Valheim/5.4.2350/' 'bepinex' '37A91C000B4E88F2ED7A4BD7D812239852D2E36CBF0FF0A9F5FAACFBA46B105F'
-$sync = Get-CheckedPackage 'https://thunderstore.io/package/download/shudnal/ConditionalConfigSync/1.0.5/' 'sync' 'EF0FB4F2D37E36224BE619AFC9F311863E364111112F64D75A776F66656A3B5E'
+$sync = Get-CheckedPackage 'https://thunderstore.io/package/download/shudnal/ConditionalConfigSync/1.0.4/' 'sync' 'F14D14216E7C6E32F70051952B49A93D515139811AC9317A00822B18B07CA5D0'
 
 # Fetch the dedicated server anonymously from Valve; only use its assemblies as
 # compiler references. No game files are committed or included in release assets.

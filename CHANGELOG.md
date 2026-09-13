@@ -1,3 +1,10 @@
+# 1.0.2
+
+- Conditional Config Syncの必須バージョンを1.0.4に引き下げ。Nexus配布版でも読み込めるように修正。
+- CIのビルド参照もCCS 1.0.4へ変更。
+
+ホスト・参加者全員のStamina Controlを1.0.2に更新してください。CCS 1.0.5以上も引き続き使用できます。
+
 # 1.0.1
 
 - Mod識別子を `jp.suzutan.valheim.staminacontrol` に変更。

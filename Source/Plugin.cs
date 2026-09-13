@@ -7,7 +7,7 @@ using HarmonyLib;
 namespace StaminaControl
 {
     [BepInPlugin(Guid, Name, Version)]
-    [BepInDependency("_shudnal.ConditionalConfigSync", "1.0.5")]
+    [BepInDependency("_shudnal.ConditionalConfigSync", "1.0.4")]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Guid = "jp.suzutan.valheim.staminacontrol";
